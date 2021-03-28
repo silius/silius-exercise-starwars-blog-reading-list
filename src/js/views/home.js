@@ -2,7 +2,7 @@ import React, { useEffect, useContext } from "react";
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
 import { Section } from "../component/section";
-import { Jumbotron, Button } from "react-bootstrap";
+import { Container, Button } from "react-bootstrap";
 import { Context } from "../store/appContext";
 
 export const Home = () => {
@@ -11,10 +11,10 @@ export const Home = () => {
 		actions.fetchPeople();
 	}, []);
 	return (
-		<Jumbotron>
-			<h1>Characters</h1>
-			<span>{JSON.stringify(store.favorites)}</span>
-			<ul>
+		<>
+			<Section title="Characters" dlist={store.peopleList} />
+			{/* <span>{JSON.stringify(store.favorites)}</span> */}
+			{/* <ul>
 				{store.peopleList.map((item, index) => {
 					return (
 						<li key={index}>
@@ -27,8 +27,8 @@ export const Home = () => {
 						</li>
 					);
 				})}
-			</ul>
-		</Jumbotron>
+			</ul> */}
+		</>
 	);
 	// <div className="mt-5">
 	// <br />

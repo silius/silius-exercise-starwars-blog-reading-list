@@ -16,7 +16,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const response = await fetch(URL, CONFIG);
 				const json = await response.json();
 
-				console.log("Data: -->", json);
+				// console.log("Data: -->", json);
 				setStore({ peopleList: json.results });
 			},
 			setFavorites: name => {
