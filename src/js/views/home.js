@@ -13,6 +13,7 @@ export const Home = () => {
 	return (
 		<>
 			<Section title="Characters" dlist={store.peopleList} />
+			<Section title="Planets" dlist={store.peopleList} />
 			{/* <span>{JSON.stringify(store.favorites)}</span> */}
 			{/* <ul>
 				{store.peopleList.map((item, index) => {

@@ -1,3 +1,6 @@
+const remove = (arr, xborrar) => {
+	return arr.filter(item => item != xborrar);
+};
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -21,7 +24,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			setFavorites: name => {
 				const store = getStore();
-				setStore({ favorites: [...store.favorites, name] });
+				store.favorites.includes(name)
+					? setStore({ favorites: remove(store.favorites, name) })
+					: setStore({ favorites: [...store.favorites, name] });
 			}
 		}
 	};
