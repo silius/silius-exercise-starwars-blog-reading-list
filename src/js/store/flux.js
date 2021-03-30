@@ -5,7 +5,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			favorites: [],
-			peopleList: []
+			peopleList: [],
+			planetList: []
 		},
 		actions: {
 			fetchPeople: async () => {
@@ -21,6 +22,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				// console.log("Data: -->", json);
 				setStore({ peopleList: json.results });
+			},
+			fetchPlanets: async () => {
+				const URL = "https://swapi.dev/api/planets/";
+				const CONFIG = {
+					method: "GET",
+					headers: {
+						"Content-type": "application/json"
+					}
+				};
+				const response = await fetch(URL, CONFIG);
+				const json = await response.json();
+
+				//console.log("Data: -->", json);
+				setStore({ planetList: json.results });
 			},
 			setFavorites: name => {
 				const store = getStore();

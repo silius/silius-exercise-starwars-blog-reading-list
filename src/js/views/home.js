@@ -7,13 +7,11 @@ import { Context } from "../store/appContext";
 
 export const Home = () => {
 	const { store, actions } = useContext(Context);
-	useEffect(() => {
-		actions.fetchPeople();
-	}, []);
+
 	return (
 		<>
 			<Section title="Characters" dlist={store.peopleList} />
-			<Section title="Planets" dlist={store.peopleList} />
+			<Section title="Planets" dlist={store.planetList} />
 			{/* <span>{JSON.stringify(store.favorites)}</span> */}
 			{/* <ul>
 				{store.peopleList.map((item, index) => {

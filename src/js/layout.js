@@ -31,8 +31,8 @@ const Layout = () => {
 					</Row>
 					<Switch>
 						<Route exact path="/" component={Home} />
-						<Route exact path="/planets" component={Planets} />
-						<Route exact path="/characters" component={Characters} />
+						<Route exact path="/planets/:theid" component={Planets} />
+						<Route exact path="/characters/:theid" component={Characters} />
 
 						<Route>
 							<h1>Not found!</h1>

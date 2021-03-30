@@ -13,14 +13,14 @@ export const NavbarMenu = () => {
 					<Image src={logo} alt="" width="90px" height="90px" />
 				</Link>
 			</Navbar.Brand>
-			<Nav className="mr-auto">
+			{/* <Nav className="mr-auto">
 				<Link className="nav-link" to="/planets">
 					Planets
 				</Link>
 				<Link className="nav-link" to="/characters">
 					Characters
 				</Link>
-			</Nav>
+			</Nav> */}
 			<Dropdown>
 				<Dropdown.Toggle id="dropdown-basic">
 					Favoritos <span className="badge badge-light">{store.favorites.length}</span>
